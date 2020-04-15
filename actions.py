@@ -23,13 +23,16 @@ class ActionCheckUserInfo(Action):
     def run(self, dispatcher: CollectingDispatcher,
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-        #
-        # value = tracker.get_slot("email")
-        # if value is None:  # this is how to check if slot value is filled or not.
-        #     dispatcher.utter_message(text="You havn't given me your Email")
-        #
-        # else:
-        dispatcher.utter_message(text="Stay Safe, I have sent the mail to ")
+        flag = 0
+        for key in ("name", "email"):
+            value = tracker.get_slot(key)
+            if value is None:  # this is how to check if slot value is filled or not.
+                dispatcher.utter_message(text="I don't have your details yet.")
+                dispatcher.utter_template(template="utter_ask_name")
+                flag = 1
+                break
+        if flag == 0:
+            dispatcher.utter_message(text="Stay Safe, I have sent the mail.")
 
         return []
 

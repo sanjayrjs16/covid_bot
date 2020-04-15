@@ -2,30 +2,30 @@ session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true
 intents:
-- give_user_info
-- thank_bot
-- greet
-- goodbye
-- affirm
-- deny
-- mood_great
-- mood_unhappy
-- bot_challenge
-- corona_intro
-- corona_spread
-- corona_food_spread
-- warm_weather
-- high_risk
-- mail_me
-- start:
-    triggers: utter_bot_function
+  - give_user_info
+  - thank_bot
+  - greet
+  - goodbye
+  - affirm
+  - deny
+  - mood_great
+  - mood_unhappy
+  - bot_challenge
+  - corona_intro
+  - corona_spread
+  - corona_food_spread
+  - warm_weather
+  - high_risk
+  - mail_me
+  - start:
+      triggers: utter_bot_function
 
 entities:
-- email
-- mobnumber
-- name
-- pincode
-- mob_number
+  - email
+  - mobnumber
+  - name
+  - pincode
+  - mob_number
 
 slots:
   email:
@@ -41,49 +41,49 @@ slots:
 
 responses:
   utter_ask_email:
-  - text: Your email is?
-  - text: What is your email id?
-  - text: Please tell me your email id
-  - text: Please enter  email id.
+    - text: Your email is?
+    - text: What is your email id?
+    - text: Please tell me your email id
+    - text: Please enter  email id.
   utter_ask_mobnumber:
-  - text: Your mobile number is?
-  - text: What is your mobile number?
-  - text: Please enter  your mobile number.
-  - text: Please tell me your mobile number.
+    - text: Your mobile number is?
+    - text: What is your mobile number?
+    - text: Please enter  your mobile number.
+    - text: Please tell me your mobile number.
   utter_ask_name:
-  - text: Your name is?
-  - text: What is your name?
-  - text: Please tell me your name
-  - text: Please enter  name.
+    - text: Your name is?
+    - text: What is your name?
+    - text: Please tell me your name
+    - text: Please enter  name.
   utter_ask_pincode:
-  - text: Your pincode is?
-  - text: What is your pincode?
-  - text: Please enter  your pincode.
-  - text: Please tell me your pincode.
+    - text: Your pincode is?
+    - text: What is your pincode?
+    - text: Please enter  your pincode.
+    - text: Please tell me your pincode.
   utter_did_that_help:
-  - text: Did that help you?
+    - text: Did that help you?
   utter_goodbye:
-  - text: Bye
-  utter_iamabot:
-  - text: I am a bot, powered by Rasa.
+    - text: Bye
+  utter_whoami:
+    - text: Hey there ! I am a bot. I can provide you with information regarding the Covid pandemic. I am powered by Rasa.
   utter_noworries:
-  - text: You are welcome.
+    - text: You are welcome.
   utter_userinfo_thank:
-  - text: Thank you ! How can I help ?
+    - text: Thank you ! How can I help ?
   utter_userinfo_reaffirm:
-  - text: I am a bot to provide you information about the corona virus pandemic. You
-      details are only used for the same purpose.Would you like me to continue ?
+    - text: I am a bot to provide you information about the corona virus pandemic. You
+        details are only used for the same purpose.Would you like me to continue ?
   utter_greet:
-  - text: Hello there mate !!
+    - text: Hello there mate !!
   utter_bot_function:
-  - text: Hey there !I am a bot. I can help you
-    buttons:
-      - title: "Location wise reports"
-        payload: "hi"
-      - title: "Mail me Reports and Precaution measures."
-        payload: "sent mail"
-      - title: "FAQ, shoot me some questions."
-        payload: "What is corona virus"
+    - text: Select the options below or ask your Questions.
+      buttons:
+        - title: "Location wise reports"
+          payload: "hi"
+        - title: "Mail me Reports and Precaution measures."
+          payload: "sent mail"
+        - title: "FAQ, shoot me some questions."
+          payload: "What is corona virus"
   utter_corona_intro:
     - text: Coronaviruses are a group of related viruses that cause diseases in mammals
         and birds. In humans, coronaviruses cause respiratory tract infections that
@@ -132,25 +132,25 @@ responses:
         Heart disease, Diabetes, Lung disease,
 
 actions:
-- utter_greet
-- utter_ask_email
-- utter_ask_mobnumber
-- utter_ask_name
-- utter_ask_pincode
-- utter_did_that_help
-- utter_goodbye
-- utter_iamabot
-- utter_bot_function
-- utter_noworries
-- utter_userinfo_thank
-- utter_userinfo_reaffirm
-- action_session_start
-- utter_corona_intro
-- utter_corona_spread
-- utter_corona_food_spread
-- utter_warm_weather
-- utter_high_risk
-- action_check_userinfo
+  - utter_greet
+  - utter_ask_email
+  - utter_ask_mobnumber
+  - utter_ask_name
+  - utter_ask_pincode
+  - utter_did_that_help
+  - utter_goodbye
+  - utter_whoami
+  - utter_bot_function
+  - utter_noworries
+  - utter_userinfo_thank
+  - utter_userinfo_reaffirm
+  - action_session_start
+  - utter_corona_intro
+  - utter_corona_spread
+  - utter_corona_food_spread
+  - utter_warm_weather
+  - utter_high_risk
+  - action_check_userinfo
 
 forms:
-- user_info
+  - user_info

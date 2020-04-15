@@ -1,14 +1,17 @@
 
 ## bot challenge
 * start
-   - utter_bot_function
+    - utter_whoami
+    - utter_bot_function
 * bot_challenge
-  - utter_iamabot
+    - utter_whoami
+    - utter_bot_function
 * goodbye
-   - utter_goodbye
+    - utter_goodbye
 
 ##user info happy path with greet
 * start
+    - utter_whoami
     - utter_bot_function
 * greet
     - utter_greet
@@ -27,6 +30,7 @@
     
 ##user info happy path  no greet
 * start
+    - utter_whoami
     - utter_bot_function
 * mail_me
     - action_check_userinfo
